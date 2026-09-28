@@ -1,0 +1,420 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+    --bg-offwhite: #fdfbf7; /* Off-white muito leve para o fundo principal */
+    --bg-cream: #f4f0e6; /* Creme mais quente para seções de destaque */
+    --text-color: #1a3622; /* Verde escuro orgânico */
+    --accent-color: #2d5a3a; /* Verde um pouco mais claro para interações (hover) */
+    --arabic-font: 'Aref Ruqaa', serif;
+    --handwriting-font: 'Caveat', cursive;
+    --body-font: 'Lato', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--bg-offwhite);
+    color: var(--text-color);
+    line-height: 1.6;
+    
+    /* Pontilhados aumentados! Usando o verde escuro com transparência para parecer tinta */
+    background-image: radial-gradient(rgba(26, 54, 34, 0.22) 6px, transparent 6px);
+    background-size: 32px 32px; /* Espaçamento da retícula */
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: rgba(253, 251, 247, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px dashed rgba(26, 54, 34, 0.3);
+}
+
+.logo-container img {
+    height: 60px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Botões */
+.btn-primary {
+    background-color: var(--text-color);
+    color: var(--bg-cream) !important;
+    padding: 10px 24px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-family: var(--body-font);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, transform 0.1s;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.02);
+}
+
+.btn-secondary {
+    background-color: var(--bg-offwhite);
+    color: var(--text-color);
+    padding: 10px 24px;
+    border-radius: 30px;
+    border: 2px solid var(--text-color);
+    cursor: pointer;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-secondary:hover {
+    background-color: var(--text-color);
+    color: var(--bg-cream);
+}
+
+.btn-icon {
+    background-color: transparent;
+    color: var(--text-color);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.btn-icon:hover {
+    background-color: var(--text-color);
+    color: var(--bg-cream);
+    transform: scale(1.05);
+}
+
+/* Hero Section */
+.hero {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    background-color: var(--bg-cream); /* Fundo creme liso, escondendo as bolinhas */
+    border-bottom: 2px dashed rgba(26, 54, 34, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Plantas espalhadas (Ramos de Oliveira / Oriente Médio) */
+.plant {
+    position: absolute;
+    /* SVG Inline de Ramo de Oliveira (folhas alongadas e olivas) */
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg"><g stroke="%231a3622" stroke-width="1.5" fill="none"><path d="M100 400 C 120 300, 70 200, 110 0" /><path d="M105 340 Q 160 300, 150 250 Q 120 280, 105 340" fill="rgba(26,54,34,0.08)"/><path d="M92 280 Q 40 250, 30 200 Q 60 230, 92 280" fill="rgba(26,54,34,0.08)"/><path d="M100 220 Q 150 180, 140 130 Q 110 160, 100 220" fill="rgba(26,54,34,0.08)"/><path d="M85 150 Q 30 130, 20 80 Q 50 110, 85 150" fill="rgba(26,54,34,0.08)"/><path d="M105 80 Q 140 50, 130 10 Q 100 30, 105 80" fill="rgba(26,54,34,0.08)"/><circle cx="120" cy="285" r="5" fill="%231a3622" /><circle cx="80" cy="235" r="4" fill="%231a3622" /><circle cx="110" cy="165" r="6" fill="%231a3622" /><circle cx="75" cy="115" r="4" fill="%231a3622" /></g></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.35;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Espalhando e rotacionando as plantas pela tela */
+.p1 { width: 14vw; min-width: 120px; height: 40vh; bottom: -10px; left: 3%; transform: rotate(-5deg); }
+.p2 { width: 16vw; min-width: 140px; height: 45vh; bottom: -20px; right: 3%; transform: scaleX(-1) rotate(-10deg); }
+.p3 { width: 12vw; min-width: 100px; height: 35vh; top: -30px; left: 18%; transform: rotate(140deg); opacity: 0.2; }
+.p4 { width: 10vw; min-width: 90px; height: 30vh; top: -10px; right: 22%; transform: scaleX(-1) rotate(160deg); opacity: 0.2; }
+
+.hero-content {
+    position: relative;
+    z-index: 1; /* Garante que o texto fique acima dos raminhos */
+}
+
+.hero-content .arabic-title {
+    font-family: var(--arabic-font);
+    font-size: 8.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 0px;
+    color: var(--text-color);
+}
+
+.hero-content .hero-subtitle {
+    font-family: var(--handwriting-font);
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.hero-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+/* Seções Gerais */
+.portfolio, .sobre, .aulas, .historias, .orcamento {
+    padding: 80px 5%;
+}
+
+.portfolio h2, .sobre h2, .aulas h2, .historias h2, .orcamento h2 {
+    font-family: var(--handwriting-font);
+    font-size: 4rem;
+    margin-bottom: 40px;
+}
+
+/* Alternando Fundos para respiro visual (tirando os pontos nas sessões creme) */
+.portfolio, .orcamento {
+    background-color: var(--bg-cream);
+    background-image: none; /* Remove pontilhado nessas áreas */
+    text-align: center;
+    border-top: 2px dashed rgba(26, 54, 34, 0.3);
+    border-bottom: 2px dashed rgba(26, 54, 34, 0.3);
+}
+
+/* Galeria */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.03);
+}
+
+/* Sobre */
+.sobre-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.sobre-text {
+    flex: 1;
+}
+
+.sobre-text p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.sobre-img {
+    flex: 1;
+}
+
+.sobre-img img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 12px 12px 0px var(--text-color);
+}
+
+/* Aulas e Oficinas */
+.aulas {
+    background-color: var(--bg-cream);
+    background-image: none;
+    border-top: 2px dashed rgba(26, 54, 34, 0.3);
+    border-bottom: 2px dashed rgba(26, 54, 34, 0.3);
+}
+
+.aulas-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.aulas-img {
+    flex: 1;
+}
+
+.aulas-img img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: -12px 12px 0px var(--text-color); /* Sombra pro lado esquerdo, pra dar movimento visual diferente do Sobre */
+}
+
+.aulas-text {
+    flex: 1;
+    text-align: left;
+}
+
+.aulas-text p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+/* Histórias (Depoimentos) */
+.historias {
+    text-align: center;
+}
+
+.cards-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: var(--bg-cream);
+    border: 2px solid var(--text-color);
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 320px;
+    box-shadow: 8px 8px 0px var(--text-color);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card .depoimento {
+    font-family: var(--handwriting-font);
+    font-size: 1.7rem;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.card .cliente {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* Orçamento */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    font-family: var(--body-font);
+    border: 2px solid rgba(26, 54, 34, 0.3);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: var(--bg-offwhite);
+    color: var(--text-color);
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--text-color);
+}
+
+/* Footer */
+footer {
+    padding: 40px 5%;
+    text-align: center;
+    background-color: var(--text-color);
+    color: var(--bg-cream);
+}
+
+.social-links {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-links a {
+    color: var(--bg-cream);
+    text-decoration: none;
+    font-family: var(--handwriting-font);
+    font-size: 1.8rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #a4c2a8; /* Tom esverdeado claro para o hover no footer */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .sobre-content, .aulas-content {
+        flex-direction: column;
+    }
+    .hero-content .arabic-title {
+        font-size: 5.5rem;
+    }
+    .hero-content .hero-subtitle {
+        font-size: 2.2rem;
+    }
+    nav ul {
+        display: none;
+    }
+    .card {
+        max-width: 100%;
+    }
+}
+
