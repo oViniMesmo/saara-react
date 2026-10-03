@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Instagram, Calendar, ArrowRight, ChevronDown } from 'lucide-react';
+import { MapPin, Calendar, ArrowRight } from 'lucide-react';
 import './index.css';
 
 // Variáveis de animação reutilizáveis
@@ -69,7 +69,7 @@ function App() {
                           <Calendar size={18} /> Agendar Sessão
                       </a>
                       <a href="https://instagram.com/amuraalhouch" target="_blank" rel="noreferrer" className="btn-icon bg-transparent border-2 border-[#1a3622] text-[#1a3622] p-3 rounded-full hover:bg-[#1a3622] hover:text-[#f4f0e6] transition-all">
-                          <Instagram size={20} />
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                       </a>
                       <a href="https://share.google/jdXroVkd3nYnrB2sg" target="_blank" rel="noreferrer" className="btn-icon bg-transparent border-2 border-[#1a3622] text-[#1a3622] p-3 rounded-full hover:bg-[#1a3622] hover:text-[#f4f0e6] transition-all">
                           <MapPin size={20} />
@@ -220,7 +220,7 @@ function App() {
                 <p className="text-sm opacity-80 mt-1">&copy; 2026 Saara | Amura Al Houch.</p>
               </div>
               <div className="flex gap-6 items-center">
-                  <a href="https://instagram.com/amuraalhouch" target="_blank" rel="noreferrer" className="hover:text-[#C1654B] transition-colors"><Instagram /></a>
+                  <a href="https://instagram.com/amuraalhouch" target="_blank" rel="noreferrer" className="hover:text-[#C1654B] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
                   <a href="https://share.google/jdXroVkd3nYnrB2sg" target="_blank" rel="noreferrer" className="hover:text-[#C1654B] transition-colors"><MapPin /></a>
               </div>
           </div>
