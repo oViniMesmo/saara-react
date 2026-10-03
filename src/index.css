@@ -106,6 +106,26 @@ nav a:hover {
     color: var(--bg-cream);
 }
 
+.btn-icon {
+    background-color: transparent;
+    color: var(--text-color);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.btn-icon:hover {
+    background-color: var(--text-color);
+    color: var(--bg-cream);
+    transform: scale(1.05);
+}
+
 /* Hero Section */
 .hero {
     height: 70vh;
@@ -114,6 +134,33 @@ nav a:hover {
     justify-content: center;
     text-align: center;
     padding: 0 20px;
+    background-color: var(--bg-cream); /* Fundo creme liso, escondendo as bolinhas */
+    border-bottom: 2px dashed rgba(26, 54, 34, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Plantas espalhadas (Ramos de Oliveira / Oriente Médio) */
+.plant {
+    position: absolute;
+    /* SVG Inline de Ramo de Oliveira (folhas alongadas e olivas) */
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg"><g stroke="%231a3622" stroke-width="1.5" fill="none"><path d="M100 400 C 120 300, 70 200, 110 0" /><path d="M105 340 Q 160 300, 150 250 Q 120 280, 105 340" fill="rgba(26,54,34,0.08)"/><path d="M92 280 Q 40 250, 30 200 Q 60 230, 92 280" fill="rgba(26,54,34,0.08)"/><path d="M100 220 Q 150 180, 140 130 Q 110 160, 100 220" fill="rgba(26,54,34,0.08)"/><path d="M85 150 Q 30 130, 20 80 Q 50 110, 85 150" fill="rgba(26,54,34,0.08)"/><path d="M105 80 Q 140 50, 130 10 Q 100 30, 105 80" fill="rgba(26,54,34,0.08)"/><circle cx="120" cy="285" r="5" fill="%231a3622" /><circle cx="80" cy="235" r="4" fill="%231a3622" /><circle cx="110" cy="165" r="6" fill="%231a3622" /><circle cx="75" cy="115" r="4" fill="%231a3622" /></g></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.35;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Espalhando e rotacionando as plantas pela tela */
+.p1 { width: 14vw; min-width: 120px; height: 40vh; bottom: -10px; left: 3%; transform: rotate(-5deg); }
+.p2 { width: 16vw; min-width: 140px; height: 45vh; bottom: -20px; right: 3%; transform: scaleX(-1) rotate(-10deg); }
+.p3 { width: 12vw; min-width: 100px; height: 35vh; top: -30px; left: 18%; transform: rotate(140deg); opacity: 0.2; }
+.p4 { width: 10vw; min-width: 90px; height: 30vh; top: -10px; right: 22%; transform: scaleX(-1) rotate(160deg); opacity: 0.2; }
+
+.hero-content {
+    position: relative;
+    z-index: 1; /* Garante que o texto fique acima dos raminhos */
 }
 
 .hero-content .arabic-title {
@@ -144,6 +191,7 @@ nav a:hover {
     display: flex;
     gap: 15px;
     justify-content: center;
+    align-items: center;
     margin-top: 30px;
     flex-wrap: wrap;
 }
@@ -159,7 +207,7 @@ nav a:hover {
     margin-bottom: 40px;
 }
 
-/* Alternando Fundos para respiro visual (tirando os pontos nas seções creme) */
+/* Alternando Fundos para respiro visual */
 .portfolio, .orcamento {
     background-color: var(--bg-cream);
     background-image: none; /* Remove pontilhado nessas áreas */
@@ -241,7 +289,7 @@ nav a:hover {
 .aulas-img img {
     width: 100%;
     border-radius: 12px;
-    box-shadow: -12px 12px 0px var(--text-color); /* Sombra pro lado esquerdo, pra dar movimento visual diferente do Sobre */
+    box-shadow: -12px 12px 0px var(--text-color);
 }
 
 .aulas-text {

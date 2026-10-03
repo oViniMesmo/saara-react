@@ -3,7 +3,7 @@ import './index.css';
 function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('Obrigado! Sua mensagem foi enviada. A Amura entrará em contato em breve para falarmos sobre a sua ideia.');
+    alert('Obrigado! Sua mensagem foi enviada. A Amura entrará em contato em breve para falarmos sobre a sua tatuagem.');
     e.target.reset();
   };
 
@@ -26,14 +26,23 @@ function App() {
 
       <main>
           <section className="hero">
+              <div className="plant p1"></div>
+              <div className="plant p2"></div>
+              <div className="plant p3"></div>
+              <div className="plant p4"></div>
+              
               <div className="hero-content">
                   <h1 className="arabic-title" dir="rtl">يزيل</h1>
                   <h2 className="hero-subtitle">Arte na pele, feita à mão.</h2>
                   <p>Saara Estúdio de tatuagem - Rua Rodrigues Junior, 383 - Fortaleza, CE</p>
                   <div className="hero-links">
-                      <a href="#orcamento" className="btn-primary">Agendar Sessão</a>
-                      <a href="https://instagram.com/amuraalhouch" target="_blank" rel="noreferrer" className="btn-secondary">Instagram</a>
-                      <a href="https://share.google/jdXroVkd3nYnrB2sg" target="_blank" rel="noreferrer" className="btn-secondary">Google Maps</a>
+                      <a href="https://calendly.com/amuraalhouch/vamosever" target="_blank" rel="noreferrer" className="btn-primary">Agendar Sessão</a>
+                      <a href="https://instagram.com/amuraalhouch" target="_blank" rel="noreferrer" className="btn-icon" aria-label="Instagram" title="Instagram">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                      </a>
+                      <a href="https://share.google/jdXroVkd3nYnrB2sg" target="_blank" rel="noreferrer" className="btn-icon" aria-label="Google Maps" title="Google Maps">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                      </a>
                   </div>
               </div>
           </section>
@@ -59,6 +68,11 @@ function App() {
                       <h2>Amura Al Houch</h2>
                       <p>Artista visual cearense e arquiteta, com raízes sírias. O SAARA é o meu estúdio privado — abrigado em uma casinha centenária no Centro de Fortaleza —, onde transformo ideias em arte permanente e crio um espaço de experimentação para ilustração e pintura.</p>
                       <p>Minha pesquisa na tatuagem explora cores, elementos da natureza, memórias afetivas e a estética da tatuagem tradicional árabe, buscando sempre um resultado autoral, delicado e cheio de personalidade.</p>
+                      
+                      <div className="spotify-player" style={{ marginTop: '35px' }}>
+                          <p style={{ fontFamily: 'var(--handwriting-font)', fontSize: '1.8rem', marginBottom: '15px', color: 'var(--text-color)' }}>Ouça a trilha sonora do estúdio:</p>
+                          <iframe style={{ borderRadius: '12px' }} src="https://open.spotify.com/embed/playlist/2ZyO8IaRmJgSdLyL9Ujz1u?utm_source=generator" width="100%" height="152" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                      </div>
                   </div>
                   <div className="sobre-img">
                       <img src="https://picsum.photos/500/600?random=7" alt="Amura no estúdio" />
@@ -75,6 +89,7 @@ function App() {
                       <h2>Aulas e Oficinas</h2>
                       <p>Além de tatuar, compartilho minha paixão pela arte através de oficinas e mentorias. Ministro aulas focadas em <strong>introdução ao desenho para tatuagem</strong>, processos criativos e no desenvolvimento de estilo autoral (como as turmas que guiei na Vila das Artes).</p>
                       <p>Seja para quem está dando os primeiros passos ou para artistas buscando refinar sua identidade visual, os encontros são um espaço seguro para troca, técnica e experimentação artística.</p>
+                      <p style={{ marginTop: '20px', fontFamily: 'var(--handwriting-font)', fontSize: '2.2rem', fontWeight: '700' }}>Turmas em Breve...</p>
                   </div>
               </div>
           </section>
